@@ -8,15 +8,7 @@ var losses = 1;
 var guessLeft = 9;
 var computerGuess = computerChoices[
      Math.floor(Math.random() * computerChoices.length)];
-
-/* Shows in the browser that the computer is selecting letter
-only for the game, will choose another letter on page refresh.*/
-
-function myFunction() {
-   console.log(computerGuess);
-}
-
-myFunction();
+     console.log(computerGuess);
 
 
 document.onkeyup = function(event) {
@@ -31,14 +23,13 @@ document.onkeyup = function(event) {
         userChoices.splice(0,userChoices.length);
         alert("YOU ARE PSYCHIC!");
         guessLeft = 9;
-    }
-
-    //A.splice(0,A.length)
+        }
+    
 
     if (guessLeft < 0) {
         document.getElementById("losses").innerHTML = losses++,
         userChoices.splice(0,userChoices.length);
-        alert("No Soup for You!");
+        alert("YOU ARE NOT PSYCHIC!");
         guessLeft = 9; 
         }
 }
